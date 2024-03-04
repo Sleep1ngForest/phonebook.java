@@ -109,14 +109,14 @@ class Printer {
         Map<Integer, PhoneRow> pb = PhoneBook.getPhoneBook();
         LinkedHashMap<Integer, PhoneRow> lhm = pb.entrySet().stream().sorted(
             (e1, e2) -> Integer.compare(
-                e2.getValue().getPhoneNumberCounter(), 
+                e2.getValue().getPhoneNumberCounter(),
                 e1.getValue().getPhoneNumberCounter()
             )
         ).collect(
             Collectors.toMap(
-                Map.Entry::getKey, 
-                Map.Entry::getValue, 
-                (e1, e2) -> e1, 
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1, e2) -> e1,
                 LinkedHashMap::new
             )
         );
